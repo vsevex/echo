@@ -807,7 +807,7 @@ class Echo {
   /// On timeout, the stanza will be null.
   /// * @param timeout The time specified in milliseconds for a timeout to
   /// occur.
-  Future<String> sendIQ({
+  Future<void> sendIQ({
     required xml.XmlElement element,
     void Function(xml.XmlElement element)? callback,
     void Function(xml.XmlElement? element)? onError,
@@ -858,7 +858,7 @@ class Echo {
       });
     }
     await send(element);
-    return id;
+    return;
   }
 
   /// Queue outgoing data for later sending.
